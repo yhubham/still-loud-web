@@ -1,0 +1,244 @@
+/* 
+   ARSCREA CSS Stylesheet (v2 Redesign)
+   Responsive media queries
+*/
+
+@media (max-width: 1024px) {
+  /* Common spacing adjustments */
+  .about-section,
+  .services-section,
+  .portfolio-section,
+  .testimonials-section,
+  .pricing-section {
+    padding: 80px 0;
+  }
+
+  /* Hero adjustments */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .hero-left {
+    align-items: center;
+  }
+
+  .hero-headline {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+  }
+
+  /* About adjustments */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .col-left, .col-right {
+    margin: 0;
+  }
+
+  /* Services adjustments */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .services-center {
+    order: 3;
+    max-width: 450px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .services-right {
+    order: 2;
+  }
+
+  /* Portfolio adjustments */
+  .portfolio-grid {
+    gap: 24px;
+  }
+
+  /* Pricing adjustments */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+    gap: 36px;
+  }
+
+  .pricing-card.active {
+    transform: none;
+  }
+
+  .pricing-card.active:hover {
+    transform: translateY(-8px);
+  }
+
+  /* Footer adjustments */
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .col-brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Layout adjustments */
+  .top-hero-card {
+    margin: 12px;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .navbar {
+    padding: 10px 24px;
+  }
+
+  /* Hamburger navigation menu */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-smooth);
+    z-index: 1000;
+  }
+
+  .nav-container.active {
+    left: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+  }
+
+  .hero-section {
+    padding: 40px 16px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.5rem, 9vw, 3.4rem);
+  }
+
+  .nav-spacer {
+    display: none;
+  }
+
+  .hero-actions-pill {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px;
+    gap: 8px;
+  }
+
+  .btn-portfolio-pill,
+  .btn-contact-pill {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+  }
+
+  /* About adjustments */
+  .about-visuals {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-img-card {
+    height: 220px;
+  }
+
+  .about-stat-card {
+    height: 120px;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  /* Portfolio adjustments */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-card-img {
+    aspect-ratio: 4/3;
+  }
+
+  .portfolio-carousel-wrapper {
+    padding: 0 16px;
+  }
+
+  .carousel-nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .prev-btn {
+    left: -10px;
+  }
+
+  .next-btn {
+    right: -10px;
+  }
+
+  .portfolio-footer {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  /* Testimonials adjustments */
+  .testimonial-card {
+    flex: 0 0 100%;
+    padding: 24px;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Footer adjustments */
+  .footer-upper {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .btn-hire-us {
+    width: 100%;
+  }
+
+  .footer-cols {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .col-brand {
+    grid-column: span 1;
+  }
+}
