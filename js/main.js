@@ -80,57 +80,168 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Testimonials Center Highlight Carousel
-  const testimonialsCarousel = document.getElementById('testimonials-carousel');
-  const prevTestimonialBtn = document.getElementById('testimonial-prev');
-  const nextTestimonialBtn = document.getElementById('testimonial-next');
-  const testimonialCards = document.querySelectorAll('.testimonial-card');
+  // 5. Testimonials Infinite-Loop Carousel
+  (function () {
+    const track     = document.getElementById('testimonials-track');
+    const prevBtn   = document.getElementById('testimonial-prev');
+    const nextBtn   = document.getElementById('testimonial-next');
+    const dotsWrap  = document.getElementById('testimonials-dots');
+    if (!track || !prevBtn || !nextBtn) return;
 
-  if (testimonialsCarousel && testimonialCards.length > 0) {
-    const highlightCenterCard = () => {
-      const carouselRect = testimonialsCarousel.getBoundingClientRect();
-      const carouselCenter = carouselRect.left + carouselRect.width / 2;
-      
-      let closestCard = null;
-      let minDistance = Infinity;
+    const originalCards = Array.from(track.querySelectorAll('.testimonial-card'));
+    const totalOriginal = originalCards.length;
 
-      testimonialCards.forEach(card => {
-        const cardRect = card.getBoundingClientRect();
-        const cardCenter = cardRect.left + cardRect.width / 2;
-        const distance = Math.abs(carouselCenter - cardCenter);
+    /* ── Determine how many cards fit in view ── */
+    function getSlidesPerView() {
+      const w = window.innerWidth;
+      if (w <= 768)  return 1;
+      if (w <= 1024) return 2;
+      return 3;
+    }
 
-        if (distance < minDistance) {
-          minDistance = distance;
-          closestCard = card;
+    let spv       = getSlidesPerView();
+    let current   = 0;          // logical index (0 … totalOriginal-1)
+    let isAnimating = false;
+    let autoTimer = null;
+    const DURATION  = 520;      // ms – matches CSS transition
+    const AUTO_DELAY = 4500;    // ms
+
+    /* ── Clone cards for seamless loop ──
+       Prepend last `spv` clones, append first `spv` clones          */
+    function buildClones() {
+      // Remove any existing clones
+      track.querySelectorAll('.t-clone').forEach(c => c.remove());
+
+      const newSpv = getSlidesPerView();
+      // leading clones (last N originals)
+      for (let i = totalOriginal - newSpv; i < totalOriginal; i++) {
+        const clone = originalCards[i].cloneNode(true);
+        clone.classList.add('t-clone');
+        track.insertBefore(clone, track.firstChild);
+      }
+      // trailing clones (first N originals)
+      for (let i = 0; i < newSpv; i++) {
+        const clone = originalCards[i].cloneNode(true);
+        clone.classList.add('t-clone');
+        track.appendChild(clone);
+      }
+    }
+
+    /* ── Measure a single card width (incl. gap) ── */
+    function cardStep() {
+      const card = track.querySelector('.testimonial-card');
+      if (!card) return 0;
+      const style = getComputedStyle(track);
+      const gap   = parseFloat(style.gap) || 28;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    /* ── Jump to position (no transition) ── */
+    function jumpTo(idx) {
+      const step   = cardStep();
+      const offset = (idx + spv) * step;   // +spv accounts for leading clones
+      track.style.transition = 'none';
+      track.style.transform  = `translateX(-${offset}px)`;
+      // force reflow
+      track.getBoundingClientRect();
+    }
+
+    /* ── Slide to position (with transition) ── */
+    function slideTo(idx, done) {
+      if (isAnimating) return;
+      isAnimating = true;
+      const step   = cardStep();
+      const offset = (idx + spv) * step;
+      track.style.transition = `transform ${DURATION}ms cubic-bezier(0.25,0.8,0.25,1)`;
+      track.style.transform  = `translateX(-${offset}px)`;
+      updateDots(((idx % totalOriginal) + totalOriginal) % totalOriginal);
+      setTimeout(() => {
+        isAnimating = false;
+        if (done) done();
+      }, DURATION);
+    }
+
+    /* ── Navigate ── */
+    function goTo(idx) {
+      current = idx;
+      slideTo(current, () => {
+        // Seamless wrap: if we're in clone territory, jump silently
+        if (current >= totalOriginal) {
+          current = 0;
+          jumpTo(current);
+        } else if (current < 0) {
+          current = totalOriginal - 1;
+          jumpTo(current);
         }
-      });
-
-      testimonialCards.forEach(card => {
-        if (card === closestCard) {
-          card.classList.add('active');
-        } else {
-          card.classList.remove('active');
-        }
-      });
-    };
-
-    testimonialsCarousel.addEventListener('scroll', highlightCenterCard);
-    window.addEventListener('resize', highlightCenterCard);
-    
-    // Initial run
-    highlightCenterCard();
-
-    // Testimonial Nav Buttons
-    const testimonialCardWidth = 572; // Card flex-basis 540 + gap 32
-    if (prevTestimonialBtn && nextTestimonialBtn) {
-      prevTestimonialBtn.addEventListener('click', () => {
-        testimonialsCarousel.scrollBy({ left: -testimonialCardWidth, behavior: 'smooth' });
-      });
-      nextTestimonialBtn.addEventListener('click', () => {
-        testimonialsCarousel.scrollBy({ left: testimonialCardWidth, behavior: 'smooth' });
       });
     }
-  }
+
+    function goNext() { goTo(current + 1); }
+    function goPrev() { goTo(current - 1); }
+
+    /* ── Dot indicators ── */
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i < totalOriginal; i++) {
+        const btn = document.createElement('button');
+        btn.className   = 't-dot' + (i === 0 ? ' active' : '');
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+        btn.addEventListener('click', () => { stopAuto(); current = i; slideTo(current); startAuto(); });
+        dotsWrap.appendChild(btn);
+      }
+    }
+
+    function updateDots(idx) {
+      dotsWrap.querySelectorAll('.t-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === idx);
+      });
+    }
+
+    /* ── Autoplay ── */
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(goNext, AUTO_DELAY);
+    }
+
+    function stopAuto() {
+      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    }
+
+    /* ── Init ── */
+    function init() {
+      spv = getSlidesPerView();
+      buildClones();
+      buildDots();
+      jumpTo(current);
+      startAuto();
+    }
+
+    /* ── Button events ── */
+    nextBtn.addEventListener('click', () => { stopAuto(); goNext(); startAuto(); });
+    prevBtn.addEventListener('click', () => { stopAuto(); goPrev(); startAuto(); });
+
+    /* ── Hover pause ── */
+    const wrapper = track.closest('.testimonials-carousel-wrapper');
+    if (wrapper) {
+      wrapper.addEventListener('mouseenter', stopAuto);
+      wrapper.addEventListener('mouseleave', startAuto);
+    }
+
+    /* ── Resize: rebuild clones + re-jump ── */
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const newSpv = getSlidesPerView();
+        if (newSpv !== spv) { spv = newSpv; init(); }
+        else { jumpTo(current); }
+      }, 200);
+    });
+
+    init();
+  })();
+
 
   // 6. Client Ticker / Marquee Hover Pause
   const marqueeContents = document.querySelectorAll('.marquee-content');

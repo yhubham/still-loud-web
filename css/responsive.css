@@ -55,6 +55,18 @@
     order: 2;
   }
 
+  /* Service buttons — keep 2 cols but tighten padding slightly */
+  .services-pills {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .service-pill {
+    padding: 16px 22px;
+    font-size: 1rem;
+    min-height: 60px;
+  }
+
   /* Portfolio adjustments */
   .portfolio-grid {
     gap: 24px;
@@ -84,6 +96,17 @@
 
   .col-brand {
     grid-column: span 2;
+  }
+
+  /* Testimonials: 2 cards visible on tablet */
+  .testimonial-card {
+    flex: 0 0 calc(50% - 15px);
+  }
+
+  .testimonial-nav-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 0.9rem;
   }
 }
 
@@ -168,7 +191,7 @@
   }
 
   .about-img-card {
-    height: 220px;
+    height: 280px;
   }
 
   .about-stat-card {
@@ -177,6 +200,19 @@
 
   .about-features {
     grid-template-columns: 1fr;
+  }
+
+  /* Service buttons — full width single column on mobile */
+  .services-pills {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .service-pill {
+    min-height: 56px;
+    padding: 16px 24px;
+    font-size: 1rem;
+    border-radius: 14px;
   }
 
   /* Portfolio adjustments */
@@ -211,15 +247,30 @@
     align-items: flex-start;
   }
 
-  /* Testimonials adjustments */
+  /* Testimonials: 1 card visible on mobile */
+  .testimonials-carousel-wrapper {
+    gap: 12px;
+  }
+
+  .testimonials-viewport {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
   .testimonial-card {
-    flex: 0 0 100%;
-    padding: 24px;
+    flex: 0 0 calc(100% - 0px);
+    padding: 24px 20px;
+  }
+
+  .testimonial-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.85rem;
   }
 
   .testimonial-text {
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   /* Footer adjustments */

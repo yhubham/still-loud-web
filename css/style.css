@@ -123,7 +123,7 @@ a {
 }
 
 .highlight-red {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 /* Global Button Styles */
@@ -214,6 +214,28 @@ a {
 }
 
 /* 1. Navbar & Hero Section Wrapper (Light Card) */
+/* Ensure the layout spreads out evenly */
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically aligns text and logo */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Give the logo explicit dimensions so it doesn't blow up */
+.nav-logo {
+  display: block;
+  height: 40px; /* Adjust to fit your navbar height */
+  width: auto;  /* Maintains aspect ratio */
+  transition: transform 0.2s ease;
+}
+
+/* Optional: Slight hover effect for the logo */
+.nav-logo-item a:hover .nav-logo {
+  transform: scale(1.05);
+}
 .top-hero-card {
   background-color: var(--color-light);
   border: 1.5px solid var(--border-secondary);
@@ -617,7 +639,7 @@ a {
   border-radius: 24px;
   border: 1.5px solid var(--border-secondary);
   overflow: hidden;
-  height: 280px;
+  height: 360px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -744,7 +766,7 @@ a {
 
 .services-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr 0.75fr;
   gap: 40px;
   align-items: stretch;
 }
@@ -763,41 +785,76 @@ a {
 }
 
 .services-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .service-pill {
+  /* Reset button defaults */
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--bg-card);
   border: 1.5px solid var(--border-secondary);
   color: var(--color-white);
-  padding: 10px 22px;
-  border-radius: 50px;
+  padding: 18px 28px;
+  border-radius: 18px;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: flex-start;
+  gap: 14px;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  width: 100%;
+  min-height: 64px;
+  text-align: left;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  position: relative;
+  overflow: hidden;
 }
 
 .service-pill i {
   color: var(--color-secondary);
-  font-size: 0.85rem;
-  transition: var(--transition-smooth);
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.service-pill:hover,
-.service-pill.active {
+.service-pill:hover {
+  background-color: rgba(251, 86, 7, 0.08);
+  border-color: var(--color-secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(251, 86, 7, 0.25), 0 0 0 1px var(--color-secondary);
+  color: var(--color-white);
+}
+
+.service-pill:hover i {
+  color: var(--color-secondary);
+  transform: scale(1.15);
+}
+
+.service-pill:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 4px 14px rgba(251, 86, 7, 0.2);
+  transition: all 0.1s ease;
+}
+
+.service-pill.active,
+.service-pill:focus-visible {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
+  box-shadow: 0 8px 28px rgba(251, 86, 7, 0.35);
+  outline: none;
 }
 
-.service-pill:hover i,
-.service-pill.active i {
+.service-pill.active i,
+.service-pill:focus-visible i {
   color: var(--color-white);
 }
 
@@ -813,6 +870,7 @@ a {
   border-radius: 28px;
   overflow: hidden;
   height: 100%;
+  max-height: 390px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -836,18 +894,19 @@ a {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  align-self: center;
 }
 
 .projects-delivered-card {
   background-color: var(--color-dark);
   border: 1.5px solid var(--border-secondary);
   border-radius: 24px;
-  padding: 40px 24px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  max-height: 160px;
   text-align: center;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
@@ -858,15 +917,15 @@ a {
 }
 
 .projects-delivered-card h3 {
-  font-size: 3.8rem;
+  font-size: 2.8rem;
   font-weight: 900;
   color: var(--color-white);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .projects-delivered-card p {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-gray);
@@ -874,20 +933,21 @@ a {
 }
 
 .services-list-card {
-  background-color: var(--color-dark);
-  border: 1.5px solid var(--border-secondary);
+  background: var(--gradient-primary);
+  border: 1.5px solid var(--color-primary);
   border-radius: 24px;
-  padding: 32px;
+  padding: 22px 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  box-shadow: var(--shadow-sm);
+  gap: 10px;
+  box-shadow: var(--shadow-purple);
   position: relative;
   transition: var(--transition-smooth);
 }
 
 .services-list-card:hover {
-  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(131, 56, 236, 0.45);
 }
 
 .services-list-header {
@@ -896,47 +956,49 @@ a {
 }
 
 .services-arrow-btn {
-  width: 54px;
-  height: 54px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.2);
   color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
-  font-size: 1.1rem;
-  box-shadow: var(--shadow-purple);
+  font-size: 1rem;
+  backdrop-filter: blur(4px);
   transition: var(--transition-smooth);
 }
 
 .services-arrow-btn:hover {
   background-color: var(--color-white);
   color: var(--color-primary);
-  transform: scale(1.05);
+  border-color: var(--color-white);
+  transform: scale(1.08);
 }
 
 .services-bullet-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .services-bullet-list li {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: var(--color-white);
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .red-bullet {
-  color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 1rem;
 }
 
@@ -990,20 +1052,20 @@ a {
 
 .portfolio-card-img {
   width: 100%;
-  aspect-ratio: 16/10;
-  overflow: hidden;
+  /* aspect-ratio: 16/10; */
+  /* overflow: hidden; */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
 }
 
 .portfolio-card-img img {
   width: 90%;
   height: 90%;
   object-fit: contain;
-  display: block;
-  transition: var(--transition-smooth);
+  display: block; 
+  /* transition: var(--transition-smooth); */
 }
 
 .portfolio-card:hover .portfolio-card-img img {
@@ -1074,15 +1136,15 @@ a {
 
 /* 5. Testimonials Section */
 .testimonials-section {
-  background-color: var(--color-light);
-  color: var(--color-dark);
+  background-color: var(--color-dark);
+  color: var(--color-white);
   padding: 100px 0;
   position: relative;
   overflow: hidden;
 }
 
 .testimonials-section .grid-overlay {
-  opacity: 0.7;
+  opacity: 0.4;
 }
 
 .testimonials-header {
@@ -1097,196 +1159,199 @@ a {
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 16px;
+  color: var(--color-white);
 }
 
 .testimonials-subtitle {
   font-size: 1.05rem;
-  color: var(--color-dark);
-  opacity: 0.8;
+  color: var(--color-gray-light);
   max-width: 500px;
   margin: 0 auto;
 }
 
+/* ── Carousel Shell ── */
 .testimonials-carousel-wrapper {
   position: relative;
   z-index: 2;
-  overflow: hidden;
-  width: 100%;
-}
-
-.testimonials-carousel {
   display: flex;
-  gap: 32px;
-  transition: transform 0.5s ease;
-  padding: 20px 0;
+  align-items: center;
+  gap: 20px;
 }
 
+/* Viewport: clips the overflowing track */
+.testimonials-viewport {
+  overflow: hidden;
+  flex: 1;
+  /* edge fade on both sides */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* Track: moves via JS translateX */
+.testimonials-track {
+  display: flex;
+  gap: 28px;
+  padding: 20px 0;
+  will-change: transform;
+  transition: transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ── Cards ── */
 .testimonial-card {
-  flex: 0 0 540px;
-  background-color: var(--color-dark);
+  flex: 0 0 calc(33.333% - 20px); /* 3-up on desktop */
+  background-color: var(--bg-secondary);
   color: var(--color-white);
   border-radius: 24px;
   border: 1.5px solid var(--border-secondary);
-  padding: 40px;
+  padding: 36px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-smooth);
+  gap: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  will-change: transform;
 }
 
-.testimonial-card.active {
-  background-color: var(--color-primary);
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(131, 56, 236, 0.25);
   border-color: var(--color-primary);
-  box-shadow: var(--shadow-purple);
 }
 
+/* Company logo in card header */
+.t-company-logo {
+  height: 36px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+/* Card header: logo + stars row */
 .testimonial-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.author-avatar {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--color-white);
-  background-color: var(--color-light);
-}
-
-.author-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.author-details-inline h4 {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--color-white);
-}
-
-.author-details-inline p {
-  font-size: 0.8rem;
-  color: var(--color-gray-light);
-  text-transform: uppercase;
 }
 
 /* Review Badge */
 .stars-badge {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 6px 14px;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 5px 12px;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .stars-row {
   color: var(--color-secondary);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   display: flex;
   gap: 2px;
 }
 
 .rating-num {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 800;
-}
-
-.testimonial-text {
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-.testimonial-card:not(.active) .testimonial-text {
-  color: var(--color-gray-light);
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.testimonial-author h4 {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--color-light);
-}
-
-.testimonial-author p {
-  font-size: 0.8rem;
-  color: var(--color-gray);
-  text-transform: uppercase;
-}
-
-.testimonial-card.active .testimonial-author h4 {
   color: var(--color-white);
 }
 
-.testimonial-card.active .testimonial-author p {
-  color: var(--color-light);
+.testimonial-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-gray-light);
+  flex: 1;
 }
 
-.testimonials-controls {
+.testimonial-author h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-white);
+  margin-bottom: 3px;
+}
+
+.testimonial-author p {
+  font-size: 0.78rem;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Navigation Buttons ── */
+.testimonial-nav-btn {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 0 20px rgba(131, 56, 236, 0.4);
+  transition: var(--transition-smooth);
+  z-index: 3;
+}
+
+.testimonial-nav-btn:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: 0 0 28px rgba(131, 56, 236, 0.55);
+  transform: scale(1.08);
+}
+
+.testimonial-nav-btn:active {
+  transform: scale(0.95);
+}
+
+/* ── Dot Indicators ── */
+.testimonials-dots {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 10px;
   margin-top: 40px;
   position: relative;
   z-index: 2;
 }
 
-.testimonial-nav-btn {
-  width: 54px;
-  height: 54px;
+.t-dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.25);
   border: none;
   cursor: pointer;
-  font-size: 1.1rem;
-  transition: var(--transition-smooth);
+  transition: all 0.3s ease;
+  padding: 0;
 }
 
-.testimonial-nav-btn.prev-btn {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-  box-shadow: var(--shadow-orange);
+.t-dot.active {
+  background-color: var(--color-primary);
+  width: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(131, 56, 236, 0.6);
 }
 
-.testimonial-nav-btn.prev-btn:hover {
-  background-color: var(--color-dark);
-  color: var(--color-white);
-  transform: scale(1.05);
-}
-
-.testimonial-nav-btn.next-btn {
-  background-color: var(--color-dark);
-  color: var(--color-white);
-  box-shadow: var(--shadow-sm);
-}
-
-.testimonial-nav-btn.next-btn:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-  transform: scale(1.05);
-}
 
 /* 6. Client Logo Marquee */
 .marquee-section {

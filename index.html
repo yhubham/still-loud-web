@@ -44,7 +44,12 @@
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li class="nav-spacer"></li>
+            <li class="nav-logo-item">
+              <a href="#home" class="nav-logo-link">
+                <img src="assets/logo.svg" alt="stillLoud Logo" class="nav-logo">
+              </a>
+      
+            </li>
             <li><a href="#work">Work</a></li>
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -65,7 +70,7 @@
       <div class="hero-grid">
         <!-- Left Side: Hero Copy -->
         <div class="hero-left">
-          <a href="https://wa.me/918886019607" target="_blank" class="join-us-btn">
+          <a href="https://wa.me/8866119607" target="_blank" class="join-us-btn">
             <i class="fa-regular fa-handshake"></i> JOIN US
           </a>
           <h1 class="hero-headline">
@@ -111,10 +116,12 @@
           <!-- Column 1 (Left Staggered) -->
           <div class="visuals-col col-left">
             <div class="about-img-card">
-              <img src="assets/about_hands.png" alt="Creative team handshake partnership">
+             <a href="#home" class="nav-logo-link">
+              <img src="assets/handshakes.svg" alt="stillLoud Logo" class="nav-logo">
+              </a>
             </div>
             <div class="about-stat-card">
-              <h3>20+</h3>
+              <h3>20+</h3>  
               <p>Happy Clients</p>
             </div>
           </div>
@@ -126,7 +133,7 @@
               <p>Retention Rate</p>
             </div>
             <div class="about-img-card">
-              <img src="assets/about_brain.png" alt="Strategy-first brain graphic">
+              <img src="assets/Brain.svg" alt="stillLoud Logo" class="nav-logo">
             </div>
           </div>
         </div>
@@ -134,13 +141,13 @@
         <!-- Right Side: Text & Features -->
         <div class="about-text-content">
           <div class="eyebrow">
-            <span class="bullet-dot"></span> About ARSCREA
+            <span class="bullet-dot"></span> About StillLoud
           </div>
           <h2 class="about-title">
             Bold <span class="highlight-red">Creative</span> Built<br>For Real <span class="highlight-red">Growth</span>
           </h2>
           <p class="about-description">
-            ARSCREA is a creative agency built to move the needle. We design brands, campaigns, and digital experiences that drive engagement and measurable impact. In 1.5 years, we've partnered with 15+ ambitious brands from hospitality and cafes to e-commerce stores, industrial companies, and content creators. Whether you're scaling a startup or elevating an established brand, we deliver results every single time.
+            StillLoud is a creative agency built to move the needle. We design brands, campaigns, and digital experiences that drive engagement and measurable impact. In 1.5 years, we've partnered with 15+ ambitious brands from hospitality and cafes to e-commerce stores, industrial companies, and content creators. Whether you're scaling a startup or elevating an established brand, we deliver results every single time.
           </p>
           
           <div class="about-features">
@@ -148,7 +155,7 @@
               <div class="feature-icon-wrapper">
                 <i class="fa-solid fa-star-of-life"></i>
               </div>
-              <h3>Strategy First Creativity</h3>
+              <h3>Strategy-First Creativity</h3>
               <p>Data-driven campaigns. Measurable results. No guesswork.</p>
             </div>
             <div class="about-feature-card">
@@ -182,24 +189,24 @@
           </h2>
           
           <div class="services-pills">
-            <div class="service-pill">
+            <button class="service-pill" data-service="branding">
               <i class="fa-solid fa-star-of-life"></i> Branding
-            </div>
-            <div class="service-pill">
+            </button>
+            <button class="service-pill" data-service="logo-design">
               <i class="fa-solid fa-crosshairs"></i> Logo Design
-            </div>
-            <div class="service-pill">
+            </button>
+            <button class="service-pill" data-service="social-media">
               <i class="fa-solid fa-plus"></i> Social Media
-            </div>
-            <div class="service-pill">
+            </button>
+            <button class="service-pill" data-service="video-editing">
               <i class="fa-solid fa-video"></i> Video Editing
-            </div>
-            <div class="service-pill">
+            </button>
+            <button class="service-pill" data-service="printables">
               <i class="fa-solid fa-print"></i> Printables
-            </div>
-            <div class="service-pill">
+            </button>
+            <button class="service-pill" data-service="invites-event">
               <i class="fa-solid fa-calendar-check"></i> Invites/Event
-            </div>
+            </button>
           </div>
           
           <a href="#contact" class="btn btn-pill-red">
@@ -210,7 +217,7 @@
         <!-- Center Column: Puzzle Graphic -->
         <div class="services-center">
           <div class="puzzle-card">
-            <img src="assets/services_puzzle.png" alt="ARSCREA services puzzle integration illustration">
+            <img src="assets/5.svg" alt="StillLoud services puzzle integration illustration">
           </div>
         </div>
         
@@ -234,7 +241,10 @@
             </ul>
           </div>
         </div>
+        
       </div>
+
+
     </div>
   </section>
 
@@ -300,102 +310,176 @@
           Hear from the brands we've transformed across every industry
         </p>
       </div>
-      
-      <!-- Testimonials Row / Carousel -->
+
+      <!-- Carousel Wrapper: nav buttons + viewport -->
       <div class="testimonials-carousel-wrapper">
-        <div class="testimonials-carousel" id="testimonials-carousel">
-          <!-- Card 1 -->
-          <div class="testimonial-card">
-            <div class="testimonial-card-header">
-              <div class="stars-badge">
-                <div class="stars-row">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <span class="rating-num">5/5</span>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              "ARSCREA has been an incredible partner online. Their team brings amazing designs to the table, beautifully showcased and impactful. Highly professional, responsive, and always ready to push boundaries."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-details">
-                <h4>Sonu Ji</h4>
-                <p>Groomers River Camp</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Card 2 (Active/Highlighted - Center) -->
-          <div class="testimonial-card active">
-            <div class="testimonial-card-header">
-              <div class="user-info">
-                <div class="author-avatar">
-                  <img src="assets/avatar_jay.png" alt="Jay Panchal Avatar">
-                </div>
-                <div class="author-details-inline">
-                  <h4>Jay Panchal</h4>
-                  <p>Industrial Industries</p>
+
+        <!-- Prev Button -->
+        <button class="testimonial-nav-btn t-prev-btn" id="testimonial-prev" aria-label="Previous Testimonial">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- Viewport (clips overflow) -->
+        <div class="testimonials-viewport">
+          <div class="testimonials-track" id="testimonials-track">
+
+            <!-- Card 1 – Cardexia -->
+            <div class="testimonial-card">
+              <div class="testimonial-card-header">
+                <img src="assets/Testemonials/cradexia.svg" alt="Cardexia logo" class="t-company-logo" loading="lazy">
+                <div class="stars-badge">
+                  <div class="stars-row">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="rating-num">5/5</span>
                 </div>
               </div>
-              <div class="stars-badge">
-                <div class="stars-row">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                </div>
-                <span class="rating-num">5/5</span>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              "A huge shoutout to the amazing, innovative young team at ARSCREA for driving our social media. Despite working with limited raw footage, their innovative designs and creative solutions have been vital in helping Kubes grow. I truly adore their work and appreciate their constant support."
-            </p>
-          </div>
-          
-          <!-- Card 3 -->
-          <div class="testimonial-card">
-            <div class="testimonial-card-header">
-              <div class="user-info">
-                <div class="author-avatar">
-                  <img src="assets/avatar_sonu.png" alt="Sonu Ji Avatar">
-                </div>
-                <div class="author-details-inline">
+              <p class="testimonial-text">
+                "ARSCREA has been an incredible partner online. Their team brings amazing designs to the table, beautifully showcased and impactful. Highly professional, responsive, and always ready to push boundaries for Cardexia."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-details">
                   <h4>Sonu Ji</h4>
                   <p>Cardexia Beer Camps</p>
                 </div>
               </div>
-              <div class="stars-badge">
-                <div class="stars-row">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+            </div>
+
+            <!-- Card 2 – Kubes -->
+            <div class="testimonial-card">
+              <div class="testimonial-card-header">
+                <img src="assets/Testemonials/Kubes.svg" alt="Kubes logo" class="t-company-logo" loading="lazy">
+                <div class="stars-badge">
+                  <div class="stars-row">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="rating-num">5/5</span>
                 </div>
-                <span class="rating-num">5/5</span>
+              </div>
+              <p class="testimonial-text">
+                "A huge shoutout to the amazing, innovative young team at ARSCREA for driving our social media. Despite working with limited raw footage, their designs and creative solutions have been vital in helping Kubes grow."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-details">
+                  <h4>Jay Panchal</h4>
+                  <p>Kubes by the Raasta</p>
+                </div>
               </div>
             </div>
-            <p class="testimonial-text">
-              "ARSCREA has been an incredible partner online. Their team brings amazing designs to the table, beautifully showcased and impactful. Highly professional, responsive, and always ready to push boundaries for Cardexia."
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Carousel Pagination Controls -->
-      <div class="testimonials-controls">
-        <button class="testimonial-nav-btn prev-btn" id="testimonial-prev" aria-label="Previous Testimonial">
-          <i class="fas fa-arrow-left"></i>
+
+            <!-- Card 3 – Siramani -->
+            <div class="testimonial-card">
+              <div class="testimonial-card-header">
+                <img src="assets/Testemonials/Siramani.svg" alt="Siramani logo" class="t-company-logo" loading="lazy">
+                <div class="stars-badge">
+                  <div class="stars-row">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="rating-num">5/5</span>
+                </div>
+              </div>
+              <p class="testimonial-text">
+                "ARSCREA transformed our brand presence completely. Their strategic approach to design and social media has made Siramani Camps stand out in a competitive market. Truly exceptional work!"
+              </p>
+              <div class="testimonial-author">
+                <div class="author-details">
+                  <h4>Siramani Team</h4>
+                  <p>Siramani Camps &amp; Cottages</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 – Denory -->
+            <div class="testimonial-card">
+              <div class="testimonial-card-header">
+                <img src="assets/Testemonials/Denory.svg" alt="Denory logo" class="t-company-logo" loading="lazy">
+                <div class="stars-badge">
+                  <div class="stars-row">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="rating-num">5/5</span>
+                </div>
+              </div>
+              <p class="testimonial-text">
+                "Working with ARSCREA was a game changer. They understood our brand vision immediately and delivered designs that perfectly matched our identity. Our online engagement has grown significantly."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-details">
+                  <h4>Denory Team</h4>
+                  <p>The Denory Store</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 – Mahakali -->
+            <div class="testimonial-card">
+              <div class="testimonial-card-header">
+                <img src="assets/Testemonials/mahakali.svg" alt="Mahakali logo" class="t-company-logo" loading="lazy">
+                <div class="stars-badge">
+                  <div class="stars-row">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="rating-num">5/5</span>
+                </div>
+              </div>
+              <p class="testimonial-text">
+                "ARSCREA delivered exactly what we needed — a strong industrial brand identity. Their professional approach and creative output exceeded our expectations. Proud to have them as our creative partner."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-details">
+                  <h4>Mahakali Team</h4>
+                  <p>Mahakali Industries</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 – Wllcraft -->
+            <div class="testimonial-card">
+              <div class="testimonial-card-header">
+                <img src="assets/Testemonials/wllcraft.svg" alt="Wllcraft logo" class="t-company-logo" loading="lazy">
+                <div class="stars-badge">
+                  <div class="stars-row">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="rating-num">5/5</span>
+                </div>
+              </div>
+              <p class="testimonial-text">
+                "The ARSCREA team brought fresh energy and bold creativity to Wllcraft. Their designs are always on-brand, delivered on time, and consistently receive great feedback from our community."
+              </p>
+              <div class="testimonial-author">
+                <div class="author-details">
+                  <h4>Wllcraft Team</h4>
+                  <p>Wllcraft</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /.testimonials-track -->
+        </div><!-- /.testimonials-viewport -->
+
+        <!-- Next Button -->
+        <button class="testimonial-nav-btn t-next-btn" id="testimonial-next" aria-label="Next Testimonial">
+          <i class="fas fa-chevron-right"></i>
         </button>
-        <button class="testimonial-nav-btn next-btn" id="testimonial-next" aria-label="Next Testimonial">
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
+
+      </div><!-- /.testimonials-carousel-wrapper -->
+
+      <!-- Dot Indicators -->
+      <div class="testimonials-dots" id="testimonials-dots" role="tablist" aria-label="Testimonial navigation"></div>
+
     </div>
   </section>
 
@@ -541,7 +625,7 @@
           </h2>
         </div>
         <div class="footer-upper-btn-wrap">
-          <a href="https://wa.me/918886019607" target="_blank" class="btn btn-hire-us">
+          <a href="https://wa.me/8866119607" target="_blank" class="btn btn-hire-us">
             HIRE US! <i class="fa-solid fa-circle-phone"></i>
           </a>
         </div>
@@ -585,8 +669,8 @@
           <ul class="footer-contact-list">
             <li>
               <span class="contact-label">Call / WhatsApp</span>
-              <span class="contact-value"><a href="tel:+918886019607">+91 88860 19607</a></span>
-              <span class="contact-value"><a href="tel:+919274446995">+91 92744 46995</a></span>
+              <span class="contact-value"><a href="tel:+8866119607">+91 88661 19607</a></span>
+              <span class="contact-value"><a href="tel:+9274446995">+91 92744 46995</a></span>
             </li>
             <li>
               <span class="contact-label">Email Us</span>
