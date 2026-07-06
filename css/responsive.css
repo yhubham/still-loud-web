@@ -4,6 +4,16 @@
 */
 
 @media (max-width: 1024px) {
+  /* Navbar tablet adjustments */
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-cta {
+    padding: 9px 20px;
+    font-size: 0.75rem;
+  }
+
   /* Common spacing adjustments */
   .about-section,
   .services-section,
@@ -119,7 +129,21 @@
   }
 
   .navbar {
-    padding: 10px 24px;
+    padding: 10px 16px 10px 20px;
+    border-radius: 999px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .nav-cta {
+    padding: 8px 18px;
+    font-size: 0.72rem;
   }
 
   /* Hamburger navigation menu */
@@ -135,6 +159,7 @@
     height: 100vh;
     background-color: var(--color-dark);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: var(--transition-smooth);
@@ -153,8 +178,22 @@
     padding: 40px;
   }
 
+  .nav-links li {
+    animation: none;
+  }
+
   .nav-links a {
     font-size: 1.5rem;
+  }
+
+  /* Hide CTA in navbar on mobile, show inside mobile menu instead */
+  .nav-cta {
+    display: none;
+  }
+
+  /* Mobile CTA inside drawer */
+  .nav-container.active ~ .nav-cta-mobile {
+    display: inline-flex;
   }
 
   .hero-section {

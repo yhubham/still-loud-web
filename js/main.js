@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
-      navbar.style.padding = '8px 28px';
-      navbar.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.35)';
-      navbar.style.backgroundColor = 'rgba(35, 36, 45, 0.98)';
-      navbar.style.backdropFilter = 'blur(10px)';
+      navbar.style.padding = '10px 16px 10px 20px';
+      navbar.style.boxShadow = '0 12px 36px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.2)';
+      navbar.style.backgroundColor = 'rgba(33, 37, 41, 0.97)';
+      navbar.style.backdropFilter = 'blur(12px)';
     } else {
-      navbar.style.padding = '12px 36px';
-      navbar.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.2)';
+      navbar.style.padding = '14px 20px 14px 24px';
+      navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15)';
       navbar.style.backgroundColor = 'var(--color-dark)';
       navbar.style.backdropFilter = 'none';
     }

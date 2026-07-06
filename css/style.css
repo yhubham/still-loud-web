@@ -214,28 +214,6 @@ a {
 }
 
 /* 1. Navbar & Hero Section Wrapper (Light Card) */
-/* Ensure the layout spreads out evenly */
-.nav-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Vertically aligns text and logo */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Give the logo explicit dimensions so it doesn't blow up */
-.nav-logo {
-  display: block;
-  height: 40px; /* Adjust to fit your navbar height */
-  width: auto;  /* Maintains aspect ratio */
-  transition: transform 0.2s ease;
-}
-
-/* Optional: Slight hover effect for the logo */
-.nav-logo-item a:hover .nav-logo {
-  transform: scale(1.05);
-}
 .top-hero-card {
   background-color: var(--color-light);
   border: 1.5px solid var(--border-secondary);
@@ -252,69 +230,183 @@ a {
   z-index: 1;
 }
 
+/* ========================================
+   Premium Navbar — Redesigned Layout
+   ======================================== */
+
+/* Slide-in animation */
+@keyframes navbarSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered link fade-up */
+@keyframes navLinkFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Sticky Navbar Styles */
 .navbar-wrapper {
   position: sticky;
   top: 10px;
   z-index: 1000;
   width: 100%;
+  animation: navbarSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .navbar {
   background-color: var(--color-dark);
-  border-radius: 100px;
-  padding: 12px 36px;
+  border-radius: 999px;
+  padding: 14px 20px 14px 24px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: var(--transition-smooth);
+  gap: 12px;
 }
 
-.nav-spacer {
-  width: 80px;
-  transition: var(--transition-smooth);
+/* Brand Logo (Far Left) */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-left: 8px;
+  text-decoration: none;
+  z-index: 1001;
+}
+
+.nav-logo {
+  display: block;
+  height: 46px;
+  width: auto;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-brand:hover .nav-logo {
+  transform: scale(1.08);
+}
+
+/* Navigation Links */
+.nav-container {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 32px;
+  gap: 28px;
   align-items: center;
+  padding: 0;
+  margin: 0;
 }
+
+.nav-links li {
+  animation: navLinkFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.nav-links li:nth-child(1) { animation-delay: 0.15s; }
+.nav-links li:nth-child(2) { animation-delay: 0.22s; }
+.nav-links li:nth-child(3) { animation-delay: 0.29s; }
+.nav-links li:nth-child(4) { animation-delay: 0.36s; }
+.nav-links li:nth-child(5) { animation-delay: 0.43s; }
+.nav-links li:nth-child(6) { animation-delay: 0.50s; }
 
 .nav-links a {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--color-light);
+  letter-spacing: 0.06em;
+  color: var(--color-white);
   text-transform: uppercase;
-  padding: 8px 0;
+  padding: 8px 2px;
   position: relative;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: inline-block;
 }
 
 .nav-links a::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
   height: 2px;
-  background-color: var(--color-secondary);
-  transition: var(--transition-smooth);
+  background: var(--gradient-orange);
+  border-radius: 2px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
-  width: 100%;
+  transform: translateX(-50%) scaleX(1);
 }
 
-.nav-links a:hover,
+.nav-links a:hover {
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
 .nav-links a.active {
   color: var(--color-secondary);
+}
+
+/* CTA Button (Far Right) */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gradient-orange);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 999px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 12px rgba(251, 86, 7, 0.25);
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(251, 86, 7, 0.45);
+}
+
+.nav-cta i {
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
+}
+
+.nav-cta:hover i {
+  transform: translateX(3px);
+}
+
+.nav-spacer {
+  display: none;
 }
 
 /* Hamburger button */
