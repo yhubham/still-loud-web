@@ -98,6 +98,14 @@
     transform: translateY(-8px);
   }
 
+  .d-slash {
+    font-size: 2.2rem;
+  }
+  
+  .d-num {
+    font-size: 1.8rem;
+  }
+
   /* Footer adjustments */
   .footer-cols {
     grid-template-columns: 1fr 1fr;
@@ -121,6 +129,20 @@
 }
 
 @media (max-width: 768px) {
+  /* Logo Swap */
+  .desktop-logo {
+    opacity: 0;
+    width: 0;
+    pointer-events: none;
+  }
+
+  .mobile-logo {
+    position: relative;
+    left: 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   /* Layout adjustments */
   .top-hero-card {
     margin: 12px;
@@ -200,8 +222,20 @@
     padding: 40px 16px;
   }
 
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hero-headline {
     font-size: clamp(2.5rem, 9vw, 3.4rem);
+    order: 1; /* explicitly keep natural order if requested */
   }
 
   .nav-spacer {
@@ -209,11 +243,13 @@
   }
 
   .hero-actions-pill {
+    display: flex;
     flex-direction: column;
     width: 100%;
     border-radius: 20px;
     padding: 6px;
     gap: 8px;
+    order: 2; /* Ensures it sits directly under the headline */
   }
 
   .btn-portfolio-pill,
@@ -299,6 +335,21 @@
   .testimonial-card {
     flex: 0 0 calc(100% - 0px);
     padding: 24px 20px;
+  }
+
+  /* Make header elements wrap gracefully on very small screens */
+  .testimonial-card-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .author-info-wrapper {
+    width: 100%;
+  }
+
+  .logo-container {
+    width: 45px;
+    height: 45px;
   }
 
   .testimonial-nav-btn {

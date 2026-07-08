@@ -300,4 +300,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 8. Hero Image Click Animation
+  const heroImg = document.querySelector('.hero-illustration-img');
+  if (heroImg) {
+    heroImg.addEventListener('click', () => {
+      // Remove class if it exists to allow re-triggering
+      heroImg.classList.remove('animate-click');
+      // Trigger reflow to restart animation
+      void heroImg.offsetWidth;
+      // Add class back
+      heroImg.classList.add('animate-click');
+    });
+  }
 });
