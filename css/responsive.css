@@ -129,6 +129,13 @@
 }
 
 @media (max-width: 768px) {
+  /* ── Fix horizontal overflow / black left strip ── */
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   /* Logo Swap */
   .desktop-logo {
     opacity: 0;
@@ -143,11 +150,22 @@
     pointer-events: auto;
   }
 
-  /* Layout adjustments */
+  /* ── Remove left strip: flush card edges, clip overflow ── */
   .top-hero-card {
-    margin: 12px;
-    padding: 16px;
-    border-radius: 24px;
+    margin: 0;
+    padding: 16px 12px;
+    border-radius: 0 0 24px 24px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    /* clip anything that bleeds past the card edge */
+    overflow: hidden;
+  }
+
+  /* Disable transform on wrapper so it doesn't trap fixed elements */
+  .navbar-wrapper {
+    animation: none !important;
+    transform: none !important;
   }
 
   .navbar {
@@ -173,11 +191,13 @@
     display: block;
   }
 
+  /* ── Mobile nav drawer — scoped to viewport, not body ── */
   .nav-container {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 100%;
+    /* Start offscreen to the LEFT but clipped by viewport, not body */
+    left: -100vw;
+    width: 100vw;
     height: 100vh;
     background-color: var(--color-dark);
     display: flex;
@@ -218,45 +238,70 @@
     display: inline-flex;
   }
 
+  /* ── Hero: stacked layout with buttons BELOW the illustration ── */
   .hero-section {
-    padding: 40px 16px;
+    padding: 32px 16px 40px;
   }
 
   .hero-grid {
     display: flex;
     flex-direction: column;
+    gap: 0; /* controlled per-element below */
   }
 
+  /* hero-left becomes a flex column; its children are reordered */
   .hero-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: contents; /* dissolve the wrapper so children join the grid flow */
   }
 
+  /* JOIN US badge — stays at the very top */
+  .join-us-btn {
+    order: 1;
+    align-self: center;
+    margin-bottom: 16px;
+  }
+
+  /* Big headline — just below the badge */
   .hero-headline {
     font-size: clamp(2.5rem, 9vw, 3.4rem);
-    order: 1; /* explicitly keep natural order if requested */
+    order: 2;
+    text-align: center;
+    margin-bottom: 0; /* remove gap — illustration provides visual break */
+  }
+
+  /* Illustration — sits between headline and buttons */
+  .hero-right {
+    order: 3;
+    width: 100%;
+    margin: 12px 0 0;
+  }
+
+  .hero-illustration-img {
+    width: 100%;
+    max-width: 100%;
   }
 
   .nav-spacer {
     display: none;
   }
 
+  /* CTA pill buttons — pushed BELOW the illustration */
   .hero-actions-pill {
+    order: 4;
     display: flex;
     flex-direction: column;
     width: 100%;
     border-radius: 20px;
     padding: 6px;
     gap: 8px;
-    order: 2; /* Ensures it sits directly under the headline */
+    margin-top: 20px;
   }
 
   .btn-portfolio-pill,
   .btn-contact-pill {
     width: 100%;
     text-align: center;
-    padding: 12px 20px;
+    padding: 14px 20px;
   }
 
   /* About adjustments */
@@ -266,7 +311,7 @@
   }
 
   .about-img-card {
-    height: 280px;
+    height: 380px;
   }
 
   .about-stat-card {
@@ -381,5 +426,38 @@
 
   .col-brand {
     grid-column: span 1;
+  }
+}
+
+/* ── Extra-small phones: 320px – 480px ── */
+@media (max-width: 480px) {
+  .top-hero-card {
+    margin: 0;
+    padding: 12px 8px;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .hero-section {
+    padding: 24px 12px 36px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .join-us-btn {
+    font-size: 0.75rem;
+    padding: 7px 14px;
+  }
+
+  .hero-actions-pill {
+    margin-top: 16px;
+    border-radius: 16px;
+  }
+
+  .btn-portfolio-pill,
+  .btn-contact-pill {
+    padding: 13px 16px;
+    font-size: 0.82rem;
   }
 }
