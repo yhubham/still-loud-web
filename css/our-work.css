@@ -1,0 +1,983 @@
+/*
+   StillLoud — Our Work Portfolio Page Styles
+   Theme: Bold, Premium, High Contrast — StillLoud Brand Palette
+   Inherits tokens from style.css :root
+*/
+
+/* =====================================================
+   KEYFRAME ANIMATIONS
+   ===================================================== */
+
+@keyframes ow-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ow-fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes ow-scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ow-slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ow-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes ow-pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.6; }
+}
+
+@keyframes ow-tag-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =====================================================
+   CARD REVEAL — driven by IntersectionObserver
+   ===================================================== */
+
+.gallery-card {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  transition:
+    opacity 0.55s cubic-bezier(0.25, 0.8, 0.25, 1),
+    transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s ease;
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.gallery-card.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* When filtered OUT — keep hidden without flash */
+.gallery-card.hidden {
+  display: none;
+}
+
+/* =====================================================
+   PAGE WRAPPER
+   ===================================================== */
+
+.ow-page {
+  background-color: var(--color-dark);
+  min-height: 100vh;
+  color: var(--color-white);
+  font-family: var(--font-body);
+}
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+
+.ow-hero {
+  position: relative;
+  padding: 120px 40px 80px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Radial glow behind hero */
+.ow-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at center,
+    rgba(131, 56, 236, 0.22) 0%,
+    rgba(251, 86, 7, 0.08) 50%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle grid overlay — same style as main site */
+.ow-hero .grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(233, 236, 239, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 236, 239, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ow-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Eyebrow label */
+.ow-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-gray);
+  margin-bottom: 24px;
+  animation: ow-fadeUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0.1s both;
+}
+
+.ow-eyebrow .bullet-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-secondary);
+  border-radius: 50%;
+  animation: ow-pulse-dot 2.2s ease-in-out infinite;
+}
+
+/* Main heading */
+.ow-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: 24px;
+  animation: ow-fadeUp 0.75s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s both;
+}
+
+.ow-hero-title .ow-title-accent {
+  background: linear-gradient(135deg, #8338EC 0%, #FB5607 60%, #FF7A29 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation:
+    ow-fadeUp 0.75s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s both,
+    ow-shimmer 4s linear infinite;
+}
+
+/* Tagline */
+.ow-hero-tagline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+  color: var(--color-gray-light);
+  margin-bottom: 36px;
+  animation: ow-fadeUp 0.75s cubic-bezier(0.25, 0.8, 0.25, 1) 0.32s both;
+}
+
+/* Tag pill row */
+.ow-hero-tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: ow-fadeUp 0.75s cubic-bezier(0.25, 0.8, 0.25, 1) 0.44s both;
+}
+
+.ow-tag {
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1.5px solid rgba(233, 236, 239, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-gray-light);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  animation: ow-tag-in 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+.ow-tag:nth-child(1) { animation-delay: 0.5s; }
+.ow-tag:nth-child(2) { animation-delay: 0.6s; }
+.ow-tag:nth-child(3) { animation-delay: 0.7s; }
+.ow-tag:nth-child(4) { animation-delay: 0.8s; }
+
+.ow-tag:hover {
+  background: rgba(131, 56, 236, 0.2);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.ow-tag-sep {
+  color: var(--color-gray);
+  font-size: 0.9rem;
+  animation: ow-fadeIn 0.5s ease 0.55s both;
+}
+
+/* =====================================================
+   CATEGORY FILTER TABS
+   ===================================================== */
+
+.ow-filter-section {
+  padding: 0 40px 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.ow-filter-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(233, 236, 239, 0.1);
+  border-radius: 999px;
+  padding: 6px;
+  backdrop-filter: blur(12px);
+  animation: ow-fadeUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0.55s both;
+}
+
+.ow-filter-btn {
+  position: relative;
+  padding: 10px 22px;
+  border: none;
+  background: transparent;
+  color: var(--color-gray-light);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.3s ease, background 0.3s ease;
+  white-space: nowrap;
+}
+
+.ow-filter-btn:hover {
+  color: var(--color-white);
+}
+
+.ow-filter-btn.active {
+  background: var(--gradient-orange);
+  color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(251, 86, 7, 0.35);
+}
+
+/* Count badge on tab */
+.ow-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 0.65rem;
+  font-weight: 800;
+  margin-left: 6px;
+  vertical-align: middle;
+  transition: background 0.3s ease;
+}
+
+.ow-filter-btn.active .ow-filter-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* =====================================================
+   GALLERY SECTION
+   ===================================================== */
+
+.ow-gallery-section {
+  padding: 0 32px 80px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Stats bar above gallery */
+.ow-gallery-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding: 0 4px;
+  animation: ow-fadeIn 0.6s ease 0.7s both;
+}
+
+.ow-stats-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-gray);
+  letter-spacing: 0.05em;
+}
+
+.ow-stats-count span {
+  color: var(--color-secondary);
+  font-weight: 800;
+}
+
+/* =====================================================
+   MASONRY GRID (Pure CSS column-count)
+   ===================================================== */
+
+.ow-masonry {
+  columns: 4;
+  column-gap: 16px;
+}
+
+/* Cards break across columns */
+.gallery-card {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: var(--bg-secondary);
+}
+
+/* Image fills the card */
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+}
+
+/* Hover: slight zoom on image */
+.gallery-card:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+/* Hover shadow lift */
+.gallery-card:hover {
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.5),
+    0 4px 16px rgba(131, 56, 236, 0.2);
+}
+
+/* Overlay */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  border-radius: 16px;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* "View Project" label */
+.view-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 999px;
+  transform: translateY(8px);
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.view-label::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.gallery-card:hover .view-label {
+  transform: translateY(0);
+}
+
+/* Category label badge on card (top-right) */
+.gallery-cat-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  background: rgba(33, 37, 41, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gray-light);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-cat-badge {
+  opacity: 1;
+}
+
+/* =====================================================
+   EMPTY STATE (no results)
+   ===================================================== */
+
+.ow-empty-state {
+  display: none;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--color-gray);
+}
+
+.ow-empty-state.visible {
+  display: block;
+}
+
+.ow-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.4;
+}
+
+/* =====================================================
+   LIGHTBOX
+   ===================================================== */
+
+.ow-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.ow-lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Backdrop */
+.ow-lb-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(16px);
+  cursor: zoom-out;
+}
+
+/* Content container */
+.ow-lb-content {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.92);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.ow-lightbox.open .ow-lb-content {
+  transform: scale(1);
+}
+
+/* The image */
+.ow-lb-img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 32px 96px rgba(0, 0, 0, 0.8);
+  display: block;
+  user-select: none;
+}
+
+/* Close button */
+.ow-lb-close {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.25s ease, transform 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.ow-lb-close:hover {
+  background: rgba(251, 86, 7, 0.8);
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* Prev / Next buttons */
+.ow-lb-prev,
+.ow-lb-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.25s ease, transform 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.ow-lb-prev { left: 20px; }
+.ow-lb-next { right: 20px; }
+
+.ow-lb-prev:hover {
+  background: rgba(131, 56, 236, 0.6);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.ow-lb-next:hover {
+  background: rgba(131, 56, 236, 0.6);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Counter */
+.ow-lb-counter {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  z-index: 2;
+  background: rgba(33, 37, 41, 0.7);
+  padding: 6px 16px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Category label in lightbox */
+.ow-lb-label {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  background: rgba(33, 37, 41, 0.7);
+  padding: 6px 16px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =====================================================
+   CTA SECTION (below gallery)
+   ===================================================== */
+
+.ow-cta-section {
+  padding: 60px 40px 100px;
+  text-align: center;
+  position: relative;
+}
+
+.ow-cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.ow-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+.ow-cta-sub {
+  font-size: 1rem;
+  color: var(--color-gray-light);
+  margin-bottom: 36px;
+  font-weight: 500;
+}
+
+.ow-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--gradient-orange);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 32px rgba(251, 86, 7, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ow-cta-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 48px rgba(251, 86, 7, 0.55);
+}
+
+/* =====================================================
+   LOAD MORE BUTTON (progressive loading)
+   ===================================================== */
+
+.ow-load-more-wrap {
+  text-align: center;
+  margin: 16px 0 48px;
+}
+
+.ow-load-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: transparent;
+  border: 1.5px solid rgba(233, 236, 239, 0.2);
+  border-radius: 999px;
+  color: var(--color-gray-light);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ow-load-more-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  background: rgba(131, 56, 236, 0.12);
+  transform: translateY(-2px);
+}
+
+.ow-load-more-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =====================================================
+   BACK TO TOP (same as main site)
+   ===================================================== */
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-orange);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+  transform: translateY(-5px);
+}
+
+/* =====================================================
+   ACTIVE NAV LINK (our-work page specific)
+   ===================================================== */
+
+/* The "Our Work" link is active when on our-work.html */
+.nav-link-work.active {
+  color: var(--color-secondary) !important;
+}
+
+.nav-link-work.active::after {
+  transform: translateX(-50%) scaleX(1) !important;
+}
+
+/* =====================================================
+   RESPONSIVE — TABLET (≤ 1200px)
+   ===================================================== */
+
+@media (max-width: 1200px) {
+  .ow-masonry {
+    columns: 3;
+  }
+
+  .ow-hero {
+    padding: 100px 32px 60px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — TABLET (≤ 900px)
+   ===================================================== */
+
+@media (max-width: 900px) {
+  .ow-masonry {
+    columns: 3;
+    column-gap: 14px;
+  }
+
+  .gallery-card {
+    margin-bottom: 14px;
+  }
+
+  .ow-gallery-section {
+    padding: 0 24px 60px;
+  }
+
+  .ow-filter-section {
+    padding: 0 24px 40px;
+  }
+
+  .ow-filter-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 24px;
+    padding: 8px;
+  }
+
+  .ow-filter-btn {
+    padding: 9px 18px;
+    font-size: 0.78rem;
+  }
+
+  .ow-lb-prev { left: 10px; }
+  .ow-lb-next { right: 10px; }
+}
+
+/* =====================================================
+   RESPONSIVE — MOBILE (≤ 640px)
+   ===================================================== */
+
+@media (max-width: 640px) {
+  .ow-hero {
+    padding: 80px 20px 48px;
+  }
+
+  .ow-hero-title {
+    font-size: clamp(2.4rem, 9vw, 3.5rem);
+  }
+
+  .ow-hero-tagline {
+    font-size: 0.95rem;
+  }
+
+  .ow-hero-tags {
+    gap: 8px;
+  }
+
+  .ow-tag {
+    font-size: 0.72rem;
+    padding: 7px 14px;
+  }
+
+  .ow-masonry {
+    columns: 2;
+    column-gap: 10px;
+  }
+
+  .gallery-card {
+    margin-bottom: 10px;
+    border-radius: 12px;
+  }
+
+  .gallery-img {
+    border-radius: 12px;
+  }
+
+  .gallery-overlay {
+    border-radius: 12px;
+  }
+
+  .ow-gallery-section {
+    padding: 0 14px 48px;
+  }
+
+  .ow-filter-section {
+    padding: 0 16px 32px;
+  }
+
+  .ow-filter-tabs {
+    width: 100%;
+    justify-content: stretch;
+    border-radius: 20px;
+    gap: 3px;
+  }
+
+  .ow-filter-btn {
+    flex: 1;
+    padding: 10px 10px;
+    font-size: 0.72rem;
+    text-align: center;
+  }
+
+  .ow-filter-count {
+    display: none;
+  }
+
+  .ow-gallery-stats {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  /* Lightbox mobile */
+  .ow-lb-prev,
+  .ow-lb-next {
+    width: 42px;
+    height: 42px;
+    font-size: 0.85rem;
+  }
+
+  .ow-lb-prev { left: 6px; }
+  .ow-lb-next { right: 6px; }
+
+  .ow-lb-close {
+    top: 16px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .ow-cta-section {
+    padding: 48px 24px 80px;
+  }
+
+  .view-label {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  /* Always show overlay on mobile (no hover state) */
+  .gallery-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+  }
+
+  .view-label {
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — EXTRA SMALL (≤ 400px)
+   ===================================================== */
+
+@media (max-width: 400px) {
+  .ow-masonry {
+    columns: 2;
+    column-gap: 8px;
+  }
+
+  .gallery-card {
+    margin-bottom: 8px;
+  }
+
+  .ow-gallery-section {
+    padding: 0 10px 40px;
+  }
+}

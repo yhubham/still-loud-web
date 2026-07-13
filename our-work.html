@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Pinterest Verification -->
+  <meta name="p:domain_verify" content="1b63087bd2df1cd9a3970c29069d5872" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore StillLoud's creative portfolio — social media creatives, logo design, branding, and printables. Premium design work built for brands that want to stand out.">
+  <meta name="keywords" content="StillLoud portfolio, creative work, logo design, branding, social media creatives, printables, design agency portfolio, India">
+  <meta name="author" content="StillLoud">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Our Work | StillLoud Portfolio">
+  <meta property="og:description" content="Explore our gallery of social media creatives, logos, branding, and printable designs.">
+  <meta property="og:type" content="website">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "StillLoud Portfolio",
+    "creator": {
+      "@type": "Organization",
+      "name": "StillLoud"
+    }
+  }
+  </script>
+
+  <title>Our Work | StillLoud Portfolio — Creative, Logo & Branding Gallery</title>
+
+  <!-- Google Fonts: Poppins (Heading) & Manrope (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Base Stylesheets (inherit brand tokens) -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Portfolio Page Styles -->
+  <link rel="stylesheet" href="css/our-work.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg" href="assets/logo.svg">
+</head>
+
+<body class="ow-page">
+
+  <!-- Floating Back to Top Pill -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR — shared with main site
+       ═══════════════════════════════════════════════ -->
+  <header class="navbar-wrapper">
+    <div class="navbar">
+      <!-- Brand Logo -->
+      <a href="index.html" class="nav-brand">
+        <img src="assets/fulllogo.svg" alt="StillLoud Logo" class="nav-logo desktop-logo">
+        <img src="assets/logo.svg" alt="StillLoud Logo Mobile" class="nav-logo mobile-logo">
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="nav-container" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="our-work.html" class="active nav-link-work">Our Work</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="index.html#contact" class="nav-cta">Let's Talk <i class="fas fa-arrow-right"></i></a>
+
+      <!-- Hamburger Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════════ -->
+  <section class="ow-hero" aria-labelledby="ow-hero-title">
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="ow-hero-inner">
+
+      <div class="ow-eyebrow" aria-label="Portfolio section">
+        <span class="bullet-dot" aria-hidden="true"></span>
+        Explore Our Portfolio
+      </div>
+
+      <h1 id="ow-hero-title" class="ow-hero-title">
+        Our <span class="ow-title-accent">Work</span>
+      </h1>
+
+      <p class="ow-hero-tagline">
+        Designs that help brands stand out bold, strategic, and built to last.
+      </p>
+
+      <div class="ow-hero-tags" role="list" aria-label="Work categories">
+        <span class="ow-tag" role="listitem">Creative</span>
+        <span class="ow-tag-sep" aria-hidden="true">•</span>
+        <span class="ow-tag" role="listitem">Branding</span>
+        <span class="ow-tag-sep" aria-hidden="true">•</span>
+        <span class="ow-tag" role="listitem">Logos</span>
+        <span class="ow-tag-sep" aria-hidden="true">•</span>
+        <span class="ow-tag" role="listitem">Printables</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CATEGORY FILTER TABS
+       ═══════════════════════════════════════════════ -->
+  <div class="ow-filter-section">
+    <div class="ow-filter-tabs" role="tablist" aria-label="Filter portfolio by category">
+
+      <button
+        class="ow-filter-btn active"
+        data-filter="all"
+        role="tab"
+        aria-selected="true"
+        aria-controls="ow-gallery">
+        All
+        <span class="ow-filter-count">37</span>
+      </button>
+
+      <button
+        class="ow-filter-btn"
+        data-filter="creative"
+        role="tab"
+        aria-selected="false"
+        aria-controls="ow-gallery">
+        Creative
+        <span class="ow-filter-count">15</span>
+      </button>
+
+      <button
+        class="ow-filter-btn"
+        data-filter="logo"
+        role="tab"
+        aria-selected="false"
+        aria-controls="ow-gallery">
+        Logo Design
+        <span class="ow-filter-count">9</span>
+      </button>
+
+      <button
+        class="ow-filter-btn"
+        data-filter="printables"
+        role="tab"
+        aria-selected="false"
+        aria-controls="ow-gallery">
+        Printables
+        <span class="ow-filter-count">13</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       GALLERY SECTION
+       ═══════════════════════════════════════════════ -->
+  <main class="ow-gallery-section" aria-label="Portfolio gallery">
+
+    <!-- Stats bar -->
+    <div class="ow-gallery-stats" aria-live="polite">
+      <span class="ow-stats-count">
+        Showing <span id="ow-visible-count">37</span> projects
+      </span>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="ow-masonry" id="ow-gallery" role="list">
+
+      <!-- ── CREATIVES (15) ─────────────────────── -->
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/1.png"
+          alt="Creative branding design — social media post"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/Arscrea%20!_%20August.jpg"
+          alt="Arscrea August campaign social media creative"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/Veyron%20Estates.jpg"
+          alt="Veyron Estates real estate branding creative"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/krestoniks.jpg"
+          alt="Krestoniks brand social media creative"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Logo 1 — interleaved for variety -->
+      <div class="gallery-card" data-category="logo" data-category-label="Logo Design" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Logos/1.png"
+          alt="Brand logo design — logo 1"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Logo</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/icecream.png"
+          alt="Ice cream brand social media creative design"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Printables 1 — interleaved -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/Main.png"
+          alt="Printable design — main showcase"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/pin_1407443630816269.png"
+          alt="Pinterest-style social media creative"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Logo 2 -->
+      <div class="gallery-card" data-category="logo" data-category-label="Logo Design" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Logos/2.png"
+          alt="Brand logo design — logo 2"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Logo</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/kubes%20janmashtami.jpg"
+          alt="Kubes Janmashtami festival social media creative"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Printables 2 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/1.png"
+          alt="Printable design — business card / brochure"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/wllcraft.jpg"
+          alt="Wllcraft brand social media creative"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Logo 3 -->
+      <div class="gallery-card" data-category="logo" data-category-label="Logo Design" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Logos/3.png"
+          alt="Brand logo design — logo 3"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Logo</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/Food%20social%20media%20post%20design%20_%20Restaurant%20Menu%20creative%20ads.jpg"
+          alt="Food restaurant social media creative advertisement"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Printables 3 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/2.png"
+          alt="Printable design — flyer or certificate"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/3%20lights.jpg"
+          alt="Three lights atmospheric creative design"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Logo 4 -->
+      <div class="gallery-card" data-category="logo" data-category-label="Logo Design" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Logos/4.png"
+          alt="Brand logo design — logo 4"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Logo</span>
+      </div>
+
+      <!-- Printables 4 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/3.png"
+          alt="Printable design — packaging or brochure"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/kubes%20bhaidooj.jpg"
+          alt="Kubes Bhaidooj festival social media creative"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Logo 5 -->
+      <div class="gallery-card" data-category="logo" data-category-label="Logo Design" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Logos/5.png"
+          alt="Brand logo design — logo 5"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Logo</span>
+      </div>
+
+      <!-- Printables 5 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/4.png"
+          alt="Printable design — standee or banner"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/chicken%20burger.jpg"
+          alt="Chicken burger food brand social media creative"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Logo 6 -->
+      <div class="gallery-card" data-category="logo" data-category-label="Logo Design" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Logos/6.png"
+          alt="Brand logo design — logo 6"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Logo</span>
+      </div>
+
+      <!-- Printables 6 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/5.png"
+          alt="Printable design — business card"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/client%20needs.png"
+          alt="Client needs informational creative design"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Logo 7 -->
+      <div class="gallery-card" data-category="logo" data-category-label="Logo Design" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Logos/7.png"
+          alt="Brand logo design — logo 7"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Logo</span>
+      </div>
+
+      <!-- Printables 7 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/6.png"
+          alt="Printable design — flyer"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/pin_2392606048805945.jpg"
+          alt="Creative social media post design"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Logo 8 -->
+      <div class="gallery-card" data-category="logo" data-category-label="Logo Design" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Logos/8.png"
+          alt="Brand logo design — logo 8"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Logo</span>
+      </div>
+
+      <!-- Printables 8 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/7.png"
+          alt="Printable design — certificate or brochure"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <div class="gallery-card" data-category="creative" data-category-label="Creative" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Creatives/pin_52072939437629503.png"
+          alt="Creative brand campaign social media design"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Creative</span>
+      </div>
+
+      <!-- Logo 9 -->
+      <div class="gallery-card" data-category="logo" data-category-label="Logo Design" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Logos/9.png"
+          alt="Brand logo design — logo 9"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Logo</span>
+      </div>
+
+      <!-- Printables 9 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/8.png"
+          alt="Printable design — packaging design"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <!-- Printables 10 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/9.png"
+          alt="Printable design — brochure layout"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <!-- Printables 11 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/10.png"
+          alt="Printable design — business card mockup"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <!-- Printables 12 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/11.png"
+          alt="Printable design — standee or banner"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+      <!-- Printables 13 -->
+      <div class="gallery-card" data-category="printables" data-category-label="Printables" role="listitem">
+        <img
+          src="assets/OUR%20WORK%20page/Printables/12.png"
+          alt="Printable design — certificate layout"
+          class="gallery-img"
+          loading="lazy"
+          decoding="async">
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="view-label">View Project</span>
+        </div>
+        <span class="gallery-cat-badge">Printables</span>
+      </div>
+
+    </div><!-- /.ow-masonry -->
+
+    <!-- Empty state (hidden by default) -->
+    <div id="ow-empty-state" class="ow-empty-state" aria-live="polite">
+      <div class="ow-empty-icon"><i class="fas fa-search"></i></div>
+      <p>No projects found in this category.</p>
+    </div>
+
+  </main><!-- /.ow-gallery-section -->
+
+  <!-- ═══════════════════════════════════════════════
+       LIGHTBOX
+       ═══════════════════════════════════════════════ -->
+  <div
+    id="ow-lightbox"
+    class="ow-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image lightbox viewer">
+
+    <!-- Backdrop -->
+    <div id="ow-lb-backdrop" class="ow-lb-backdrop" aria-hidden="true"></div>
+
+    <!-- Category label -->
+    <div id="ow-lb-label" class="ow-lb-label" aria-live="polite">Creative</div>
+
+    <!-- Content -->
+    <div class="ow-lb-content">
+      <img
+        id="ow-lb-img"
+        class="ow-lb-img"
+        src=""
+        alt="Portfolio project fullscreen view"
+        draggable="false">
+    </div>
+
+    <!-- Close button -->
+    <button id="ow-lb-close" class="ow-lb-close" aria-label="Close lightbox">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Previous -->
+    <button id="ow-lb-prev" class="ow-lb-prev" aria-label="Previous image">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <!-- Next -->
+    <button id="ow-lb-next" class="ow-lb-next" aria-label="Next image">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!-- Counter -->
+    <div id="ow-lb-counter" class="ow-lb-counter" aria-live="polite">1 / 37</div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA SECTION
+       ═══════════════════════════════════════════════ -->
+  <section class="ow-cta-section" aria-labelledby="ow-cta-title">
+    <div class="ow-cta-inner">
+      <h2 id="ow-cta-title" class="ow-cta-title">
+        Love what you see?<br>
+        <span style="color: var(--color-secondary);">Let's build your brand.</span>
+      </h2>
+      <p class="ow-cta-sub">
+        From logos to full brand identities we've got you covered.
+      </p>
+      <a href="https://wa.me/8866119607" target="_blank" rel="noopener noreferrer" class="ow-cta-btn">
+        <i class="fa-solid fa-circle-phone"></i>
+        Let's Talk
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER — shared with main site
+       ═══════════════════════════════════════════════ -->
+  <footer id="contact" class="footer-section">
+    <div class="section-container">
+      <!-- Upper Footer Grid -->
+      <div class="footer-upper">
+        <div class="footer-upper-text">
+          <h2>
+            <span class="highlight-red">Curious?</span><br>
+            Let's have a real chat.
+          </h2>
+        </div>
+        <div class="footer-upper-btn-wrap">
+          <a href="https://wa.me/8866119607" target="_blank" rel="noopener noreferrer" class="btn btn-hire-us">
+            HIRE US! <i class="fa-solid fa-circle-phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Footer Columns -->
+      <div class="footer-cols">
+        <!-- Brand Info -->
+        <div class="footer-col col-brand">
+          <h3 class="footer-logo">StillLoud</h3>
+          <p class="brand-bio">
+            Elevating Small Businesses with Strategic Design.<br><br>
+            Branding • Logo Design • Social Media • Websites • UI/UX
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com/wearestillloud" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="footer-col col-nav">
+          <h4 class="col-title">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About us</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="our-work.html">Our Work</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="footer-col col-contact">
+          <h4 class="col-title">Contact Us!</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <span class="contact-label">Call / WhatsApp</span>
+              <span class="contact-value"><a href="tel:+918866119607">+91 88661 19607</a></span>
+              <span class="contact-value"><a href="tel:+919274446995">+91 92744 46995</a></span>
+            </li>
+            <li>
+              <span class="contact-label">Email Us</span>
+              <span class="contact-value"><a href="mailto:team.stillloud@gmail.com">team.stillloud@gmail.com</a></span>
+            </li>
+            <li>
+              <span class="contact-label">Instagram DM</span>
+              <span class="contact-value"><a href="https://instagram.com/wearestillloud" target="_blank" rel="noopener noreferrer">@wearestillloud</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 StillLoud. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/our-work.js"></script>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6a50a992a6558f1d451fe2fa/1jt5hcpjs';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+</body>
+
+</html>
