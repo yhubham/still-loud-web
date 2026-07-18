@@ -207,9 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lbLabel)   lbLabel.textContent   = item.category;
   }
 
-  // Open on card click
+  // Open on card click — skip video / no-lightbox cards
   allCards.forEach(card => {
-    card.addEventListener('click', () => openLightbox(card));
+    card.addEventListener('click', () => {
+      if (card.hasAttribute('data-no-lightbox')) return;
+      openLightbox(card);
+    });
   });
 
   // Close buttons

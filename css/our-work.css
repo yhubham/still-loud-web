@@ -650,6 +650,37 @@
 }
 
 /* =====================================================
+   VIDEO CARD
+   ===================================================== */
+
+.gallery-card--video {
+  cursor: default;   /* no pointer — video handles its own click */
+}
+
+.gallery-card--video:hover .gallery-img {
+  transform: none;   /* no zoom on video card */
+}
+
+.gallery-card--video:hover .gallery-overlay {
+  opacity: 0;        /* no overlay on video card */
+}
+
+.gallery-video-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  line-height: 0;    /* remove gap under iframe */
+}
+
+.gallery-video-wrap iframe {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+}
+
+/* =====================================================
    CTA SECTION (below gallery)
    ===================================================== */
 

@@ -169,8 +169,13 @@
   }
 
   .navbar {
-    padding: 10px 16px 10px 20px;
+    padding: 7px 12px 7px 14px;
     border-radius: 999px;
+  }
+
+  /* Shrink the logo on phones */
+  .nav-logo {
+    height: 30px;
   }
 
   .nav-links {
