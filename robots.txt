@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Do not block assets
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+
+Sitemap: https://stillloud.in/sitemap.xml
