@@ -1,0 +1,258 @@
+# StillLoud
+
+> StillLoud is a creative branding and digital design studio that helps startups and small businesses build memorable brands and digital experiences through strategic design, social media creatives, website design, UI/UX, and digital marketing solutions.
+
+- Website: https://stillloud.in/
+- Email: team.stillloud@gmail.com
+- Phone / WhatsApp: +91 6351 139 179
+
+---
+
+## Company Overview
+
+StillLoud is a modern creative branding studio focused on helping startups and small businesses build memorable brands and digital experiences. The studio designs brands, campaigns, and digital experiences that drive engagement and measurable impact.
+
+StillLoud reports 20+ happy clients, a 100% retention rate, and 400+ projects delivered.
+
+Notable clients include Cardexia, Pune Food Truck, The Denory Store, Glow Framzy, The Hungry Nomads, Kubes by The Raasta, Wllcraft, Siramani Camps & Cottages, and Mahakali Industries.
+
+Source: https://stillloud.in/#about
+
+---
+
+## Services
+
+StillLoud offers the following creative and digital services:
+
+### Brand Identity Design
+Complete brand identity creation including logo design, brand guidelines, visual systems, and brand strategy.
+
+### UI/UX Design
+User interface and user experience design for digital products and applications.
+
+### Social Media Design
+Social media post design, campaign creatives, festival post design, and content creation for platforms like Instagram and Pinterest.
+
+### Website Design
+Website design and development ranging from basic websites (up to 3 pages) to premium websites (up to 10 pages) and custom e-commerce / web app builds.
+
+### Marketing Creatives
+Marketing collateral design including advertisements, promotional materials, and campaign visuals.
+
+### Digital Branding
+End-to-end digital branding strategy and execution for businesses looking to establish or elevate their online presence.
+
+Source: https://stillloud.in/#services
+
+---
+
+## Features
+
+- **Strategy-First Creativity** — Data-driven campaigns with measurable results.
+- **Distinctive Design** — Design that makes brands unmistakable.
+- **Creativity** — Bold, original creative output.
+- **Excellence** — High-quality deliverables across all projects.
+- **Reliability** — Consistent, on-time delivery.
+- **Dedicated Designers** — Assigned designers and creative managers depending on the plan.
+- **Responsive Support** — Support response times from 48 hours down to priority, depending on the plan.
+- **Revision Options** — From single revisions to unlimited revisions depending on the plan.
+
+Source: https://stillloud.in/#about , https://stillloud.in/#services
+
+---
+
+## Use Cases
+
+- Startups looking to establish a professional brand identity from scratch.
+- Small businesses that need consistent social media content and design.
+- Growing brands that require ongoing creative support including branding, websites, and marketing materials.
+- Businesses in hospitality, food, retail, industrial, and e-commerce sectors.
+- Companies looking for a complete creative team without hiring in-house designers.
+- Brands needing print-ready design including business cards, brochures, flyers, standees, banners, and certificates.
+
+Source: https://stillloud.in/#about , https://stillloud.in/our-work.html
+
+---
+
+## Supported Formats and Categories
+
+### Portfolio Categories
+
+The portfolio on the Our Work page is organized into the following categories:
+
+- **Creative** — Social media posts, campaign creatives, festival posts, food brand designs, and brand campaign visuals. (15 projects)
+- **Logo Design** — Brand logo designs across a variety of industries. (9 projects)
+- **Printables** — Business cards, brochures, flyers, standees, banners, certificates, and packaging designs. (13 projects)
+- **Video** — Brand videos (e.g., Kubes Rooms brand video).
+
+Total publicly visible projects: 38.
+
+### Industries Served
+
+Based on the portfolio and client list, StillLoud has worked with businesses in the following industries:
+
+- Hospitality and travel (Kubes Stays, Siramani River Camps)
+- Food and beverage (Pune Food Truck, The Hungry Nomads)
+- Retail and e-commerce (The Denory Store, Wllcraft, Cardexia)
+- Beauty and lifestyle (Glow Framzy)
+- Industrial and manufacturing (Mahakali Industries)
+- Real estate (Veyron Estates)
+
+Source: https://stillloud.in/our-work.html
+
+---
+
+## Documentation
+
+### Website Structure
+
+- **Home** — https://stillloud.in/
+  - Hero section, About, Services, Portfolio preview, Testimonials, Pricing, Contact
+- **Our Work** — https://stillloud.in/our-work.html
+  - Full portfolio gallery with category filters (All, Creative, Logo Design, Printables)
+  - Lightbox viewer for full-screen project viewing
+- **Sitemap** — https://stillloud.in/sitemap.xml
+- **Robots.txt** — https://stillloud.in/robots.txt
+
+### Technical Stack
+
+- HTML5, CSS3, JavaScript (Vanilla)
+- SVG assets
+- Responsive design (Desktop, Laptop, Tablet, Mobile)
+- Hosted on Vercel
+- Google Fonts: Poppins (headings), Manrope (body/UI)
+- Live chat via Tawk.to
+
+Source: https://stillloud.in/ , https://stillloud.in/robots.txt , https://stillloud.in/sitemap.xml
+
+---
+
+## Frequently Asked Questions
+
+### What does StillLoud do?
+StillLoud is a creative branding and digital design studio that helps startups and small businesses build memorable brands through strategic design, websites, social media design, and creative digital experiences.
+
+### What services does StillLoud offer?
+StillLoud offers Brand Identity Design, UI/UX Design, Social Media Design, Website Design, Marketing Creatives, and Digital Branding.
+
+### Who are StillLoud's typical clients?
+StillLoud works primarily with startups and small businesses across hospitality, food and beverage, retail, e-commerce, beauty, industrial, and real estate sectors.
+
+### How many projects has StillLoud delivered?
+StillLoud reports having delivered 400+ projects.
+
+### How can I contact StillLoud?
+You can reach StillLoud via phone/WhatsApp at +91 6351 139 179, email at team.stillloud@gmail.com, or Instagram DM at @wearestillloud. The website also has an integrated live chat widget.
+
+### Does StillLoud offer pricing plans?
+Yes. StillLoud offers three social media management tiers: Starter (for emerging brands), Growth Pro (for scaling, marked as best seller), and Authority (for market leaders). Pricing is quote-based; the website invites visitors to request a free quote. See the Pricing section below for full details.
+
+### What deliverables are included?
+Depending on the plan, StillLoud delivers between 26 and 49 pieces of social media content per month, including reels, carousel posts, static posts, and stories.
+
+Source: https://stillloud.in/
+
+---
+
+## Pricing
+
+StillLoud offers three social media management tiers. Pricing is quote-based; visitors are invited to request a free quote via the website.
+
+### Starter — For Emerging Brands
+Build your foundation with essential content and posting consistency to establish presence.
+
+**Monthly content:**
+- 4 Reels
+- 7 Carousel Posts
+- 4 Static Posts
+- 8 Stories
+- **26 Deliverables total**
+
+**Included:**
+- ✅ Caption Writing
+- ✅ Hashtag Research
+- ✅ Posting Schedule
+- ❌ Account Manager
+
+### Growth Pro — Designed for Scaling (Best Seller)
+Double your content volume with strategy insights. The recommended package for rapid growth.
+
+**Monthly content:**
+- 8 Reels
+- 10 Carousel Posts
+- 6 Static Posts
+- 12 Stories
+- **36 Deliverables total**
+
+**Included:**
+- ✅ Monthly Content Calendar
+- ✅ Performance Reports
+- ✅ Quarterly Analysis
+- ❌ Account Manager
+
+### Authority — For Market Leaders
+Complete command center with dedicated support. Dominate your niche with full strategic control.
+
+**Monthly content:**
+- 12 Reels
+- 13 Carousel Posts
+- 8 Static Posts
+- 16 Stories
+- **49 Deliverables total**
+
+**Included:**
+- ✅ Monthly Content Strategy
+- ✅ Full Analytics & Insights
+- ✅ Monthly Competitor Report
+- ✅ Dedicated Account Manager
+
+### Quick Comparison
+
+| Feature | Starter | Growth Pro | Authority |
+|---|---:|---:|---:|
+| Reels | 4 | 8 | 12 |
+| Carousel Posts | 7 | 10 | 13 |
+| Static Posts | 4 | 6 | 8 |
+| Stories | 8 | 12 | 16 |
+| **Total Deliverables** | **26** | **36** | **49** |
+| Caption Writing | ✅ | — | — |
+| Hashtag Research | ✅ | — | — |
+| Posting Schedule | ✅ | — | — |
+| Monthly Content Calendar | — | ✅ | — |
+| Performance Reports | — | ✅ | — |
+| Quarterly Analysis | — | ✅ | — |
+| Monthly Content Strategy | — | — | ✅ |
+| Full Analytics & Insights | — | — | ✅ |
+| Monthly Competitor Report | — | — | ✅ |
+| Account Manager | ❌ | ❌ | ✅ |
+
+Source: https://stillloud.in/#pricing
+
+---
+
+## Contact and Support
+
+### Direct Contact
+- **Phone / WhatsApp:** +91 6351 139 179
+- **Email:** team.stillloud@gmail.com
+
+### Social Media
+- **Instagram:** [@wearestillloud](https://instagram.com/wearestillloud)
+- **LinkedIn:** [StillLoud](https://www.linkedin.com/company/stillloud/)
+- **Pinterest:** [@wearestillloud](https://in.pinterest.com/wearestillloud/)
+
+### Live Chat
+StillLoud offers live chat support on the website via Tawk.to.
+
+### WhatsApp Direct
+- https://wa.me/6351139179
+
+Source: https://stillloud.in/#contact
+
+---
+
+## Legal
+
+© 2026 StillLoud. All Rights Reserved.
+
+Source: https://stillloud.in/

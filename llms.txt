@@ -1,0 +1,19 @@
+# StillLoud
+
+> Creative branding and digital design studio helping startups and small businesses build memorable brands through strategic design, social media creatives, websites, and digital experiences.
+
+StillLoud offers Brand Identity Design, UI/UX Design, Social Media Design, Website Design, Marketing Creatives, and Digital Branding. The studio has delivered 400+ projects for 20+ clients across hospitality, food, retail, e-commerce, and industrial sectors.
+
+## Main Pages
+
+- [Home](https://stillloud.in/): Overview of StillLoud's services, portfolio highlights, client testimonials, and pricing plans.
+- [About](https://stillloud.in/#about): Company background, approach (strategy-first creativity, distinctive design), and key stats.
+- [Services](https://stillloud.in/#services): Full list of creative and digital services offered.
+- [Our Work](https://stillloud.in/our-work.html): Portfolio gallery with 38 projects across Creative, Logo Design, Printables, and Video categories.
+- [Reviews](https://stillloud.in/#reviews): Client testimonials from Cardexia, Kubes Stays, Siramani Camps, The Denory, Mahakali Industries, and Wllcraft.
+- [Pricing](https://stillloud.in/#pricing): Three social media management tiers — Starter (26 deliverables/mo), Growth Pro (36 deliverables/mo), and Authority (49 deliverables/mo).
+- [Contact](https://stillloud.in/#contact): Phone, email, WhatsApp, Instagram, LinkedIn, and Pinterest contact details.
+
+## Optional
+
+- [llms-full.txt](https://stillloud.in/llms-full.txt): Extended version of this file with detailed service descriptions, pricing breakdowns, FAQ, and portfolio categories.

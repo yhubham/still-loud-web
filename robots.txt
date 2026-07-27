@@ -7,3 +7,7 @@ Allow: /js/
 Allow: /assets/
 
 Sitemap: https://stillloud.in/sitemap.xml
+
+# LLM-readable site information
+LLMs-txt: https://stillloud.in/llms.txt
+LLMs-full-txt: https://stillloud.in/llms-full.txt
