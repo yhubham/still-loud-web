@@ -162,7 +162,7 @@
         aria-selected="true"
         aria-controls="ow-gallery">
         All
-        <span class="ow-filter-count">38</span>
+        <span class="ow-filter-count">48</span>
       </button>
 
       <button
@@ -195,6 +195,16 @@
         <span class="ow-filter-count">13</span>
       </button>
 
+      <button
+        class="ow-filter-btn"
+        data-filter="reels"
+        role="tab"
+        aria-selected="false"
+        aria-controls="ow-gallery">
+        Reels
+        <span class="ow-filter-count">10</span>
+      </button>
+
     </div>
   </div>
 
@@ -206,7 +216,7 @@
     <!-- Stats bar -->
     <div class="ow-gallery-stats" aria-live="polite">
       <span class="ow-stats-count">
-        Showing <span id="ow-visible-count">38</span> projects
+        Showing <span id="ow-visible-count">48</span> projects
       </span>
     </div>
 
@@ -215,21 +225,160 @@
 
       <!-- ── FEATURED VIDEO ─────────────────────── -->
 
-      <div class="gallery-card gallery-card--video" data-category="creative" data-category-label="Creative" data-no-lightbox role="listitem">
-        <div class="gallery-video-wrap">
-          <iframe
-            src="https://player.cloudinary.com/embed/?cloud_name=n4d0qen2&public_id=kubes_rooms_pqz0pq"
-            width="640"
-            height="360"
-            style="height: auto; width: 100%; aspect-ratio: 640 / 360;"
-            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-            allowfullscreen
-            frameborder="0"
+      <div class="gallery-card gallery-card--reel" data-category="creative" data-category-label="Creative" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/n4d0qen2/video/upload/kubes_rooms_pqz0pq.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
             title="Kubes Rooms — Brand Video"
-            loading="lazy"
-          ></iframe>
+            aria-label="Kubes Rooms brand video reel"
+          ></video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
         </div>
         <span class="gallery-cat-badge">Video</span>
+      </div>
+
+      <!-- ── REELS (10 × 9:16 vertical videos) ──────── -->
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785088930/Hanuman_ji_zsp4pm.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Hanuman Ji — Reel"
+            aria-label="Hanuman Ji reel video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
+      </div>
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785087278/draft_5_copskf.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Draft 5 — Reel"
+            aria-label="Draft 5 reel video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
+      </div>
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785087273/siramani_reel_wxiaqd.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Siramani Reel"
+            aria-label="Siramani reel video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
+      </div>
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785087269/kubes_rooms_ls415x.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Kubes Rooms — Reel"
+            aria-label="Kubes Rooms reel video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
+      </div>
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785087270/kubes_reel_llbpnj.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Kubes Reel"
+            aria-label="Kubes reel video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
+      </div>
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785087266/Wllcrattt_reels_xtgtql.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Wllcraft Reels"
+            aria-label="Wllcraft reel video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
+      </div>
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785087263/Glowframzy_fceqjw.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Glowframzy — Reel"
+            aria-label="Glowframzy reel video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
+      </div>
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785087261/Wallcraft_reel_bldwda.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Wallcraft Reel"
+            aria-label="Wallcraft reel video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
+      </div>
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785087260/cafe_hopping_vzse5s.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Cafe Hopping — Reel"
+            aria-label="Cafe Hopping reel video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
+      </div>
+
+      <div class="gallery-card gallery-card--reel" data-category="reels" data-category-label="Reels" data-no-lightbox role="listitem">
+        <div class="gallery-reel-wrap">
+          <video
+            src="https://res.cloudinary.com/tebtzfn8/video/upload/v1785087256/siramani_rells_lnngxw.mp4"
+            class="gallery-reel-video"
+            loop muted playsinline preload="none"
+            title="Siramani Reels"
+            aria-label="Siramani reels video">
+          </video>
+          <div class="reel-play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        </div>
+        <span class="gallery-cat-badge">Reel</span>
       </div>
 
       <!-- ── CREATIVES (15) ─────────────────────── -->
@@ -789,7 +938,7 @@
     </button>
 
     <!-- Counter -->
-    <div id="ow-lb-counter" class="ow-lb-counter" aria-live="polite">1 / 37</div>
+    <div id="ow-lb-counter" class="ow-lb-counter" aria-live="polite">1 / 47</div>
 
   </div>
 

@@ -260,4 +260,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* =====================================================
+     8. REEL CARDS — click to play / pause
+     ===================================================== */
+  const reelCards = document.querySelectorAll('.gallery-card--reel');
+
+  function pauseAllReels(exceptCard) {
+    reelCards.forEach(card => {
+      if (card === exceptCard) return;
+      const vid = card.querySelector('.gallery-reel-video');
+      if (vid && !vid.paused) {
+        vid.pause();
+        card.classList.remove('playing');
+      }
+    });
+  }
+
+  reelCards.forEach(card => {
+    const vid = card.querySelector('.gallery-reel-video');
+    if (!vid) return;
+
+    card.addEventListener('click', () => {
+      if (vid.paused) {
+        pauseAllReels(card);
+        vid.play().catch(() => {}); // ignore autoplay policy errors
+        card.classList.add('playing');
+      } else {
+        vid.pause();
+        card.classList.remove('playing');
+      }
+    });
+
+    // Pause when scrolled out of view
+    const reelObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting && !vid.paused) {
+          vid.pause();
+          card.classList.remove('playing');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    reelObserver.observe(card);
+  });
+
 });

@@ -681,6 +681,89 @@
 }
 
 /* =====================================================
+   REEL CARD (9:16 vertical video)
+   ===================================================== */
+
+.gallery-card--reel {
+  cursor: pointer;
+}
+
+.gallery-card--reel:hover .gallery-overlay {
+  opacity: 0; /* no gradient overlay on reel — video is the content */
+}
+
+.gallery-reel-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  line-height: 0;
+}
+
+.gallery-reel-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.gallery-card--reel:hover .gallery-reel-video {
+  transform: scale(1.04);
+}
+
+/* Play / Pause button centered on reel */
+.reel-play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 16px;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.reel-play-btn i {
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  transition: transform 0.3s ease, background 0.3s ease;
+  padding-left: 3px; /* optical center for play icon */
+}
+
+.gallery-card--reel:hover .reel-play-btn {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.gallery-card--reel:hover .reel-play-btn i {
+  transform: scale(1.15);
+  background: rgba(251, 86, 7, 0.6);
+  border-color: rgba(251, 86, 7, 0.8);
+}
+
+/* When reel is playing — hide play button */
+.gallery-card--reel.playing .reel-play-btn {
+  opacity: 0;
+}
+
+.gallery-card--reel.playing:hover .reel-play-btn {
+  opacity: 1;
+}
+
+/* =====================================================
    CTA SECTION (below gallery)
    ===================================================== */
 
