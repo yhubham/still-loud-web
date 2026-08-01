@@ -420,7 +420,28 @@
     text-align: center;
   }
 
-  .btn-hire-us {
+  .footer-upper-btn-wrap {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-hire-us, .btn-schedule {
+    width: 100%;
+  }
+
+  .cta-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-btn-group .btn,
+  .ow-cta-btn-group .ow-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ow-cta-btn-group {
+    flex-direction: column;
     width: 100%;
   }
 

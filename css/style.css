@@ -162,6 +162,45 @@ a {
   box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
 }
 
+/* CTA button group — flex row, wraps on mobile */
+.cta-btn-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Schedule a Meeting — purple outline variant (dark backgrounds) */
+.btn-schedule {
+  background: transparent;
+  color: var(--color-white);
+  border: 1.5px solid rgba(131, 56, 236, 0.65);
+  box-shadow: 0 4px 20px rgba(131, 56, 236, 0.18);
+}
+
+.btn-schedule:hover {
+  background: rgba(131, 56, 236, 0.15);
+  border-color: #8338EC;
+  color: var(--color-white);
+  box-shadow: 0 12px 36px rgba(131, 56, 236, 0.35);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Schedule a Meeting — light background variant (footer) */
+.btn-schedule--light {
+  color: var(--color-dark);
+  border-color: rgba(131, 56, 236, 0.4);
+  box-shadow: 0 4px 20px rgba(131, 56, 236, 0.1);
+}
+
+.btn-schedule--light:hover {
+  background: rgba(131, 56, 236, 0.1);
+  color: #6a1dcb;
+  border-color: #8338EC;
+  box-shadow: 0 12px 36px rgba(131, 56, 236, 0.2);
+  transform: translateY(-3px) scale(1.02);
+}
+
 /* Floating Back to Top */
 .back-to-top {
   position: fixed;
@@ -1884,6 +1923,13 @@ a {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 48px;
+}
+
+.footer-upper-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .footer-upper-text h2 {

@@ -817,6 +817,30 @@
   box-shadow: 0 16px 48px rgba(251, 86, 7, 0.55);
 }
 
+/* Button group — side by side with wrapping on mobile */
+.ow-cta-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Outline / secondary variant — "Schedule a Meeting" */
+.ow-cta-btn--outline {
+  background: transparent;
+  border: 2px solid rgba(131, 56, 236, 0.6);
+  box-shadow: 0 8px 32px rgba(131, 56, 236, 0.2);
+  color: var(--color-white);
+}
+
+.ow-cta-btn--outline:hover {
+  background: rgba(131, 56, 236, 0.15);
+  border-color: #8338EC;
+  box-shadow: 0 16px 48px rgba(131, 56, 236, 0.4);
+  transform: translateY(-3px) scale(1.03);
+}
+
 /* =====================================================
    LOAD MORE BUTTON (progressive loading)
    ===================================================== */
