@@ -190,9 +190,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation:
-    ow-fadeUp 0.75s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s both,
-    ow-shimmer 4s linear infinite;
 }
 
 /* Tagline */
